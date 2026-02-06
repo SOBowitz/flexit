@@ -1,0 +1,16 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Exhaust Fan RPM"
+  },
+  "uiComponent": "sensor",
+  "getable": true,
+  "setable": false,
+  "units": {
+    "en": "RPM"
+  },
+  "min": 0,
+  "max": 5000,
+  "decimals": 0,
+  "insights": true
+}

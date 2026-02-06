@@ -1,0 +1,35 @@
+{
+  "type": "enum",
+  "title": {
+    "en": "Ventilation Mode"
+  },
+  "getable": true,
+  "setable": true,
+  "uiComponent": "picker",
+  "values": [
+    {
+      "id": "stop",
+      "title": { "en": "Stop" }
+    },
+    {
+      "id": "away",
+      "title": { "en": "Away" }
+    },
+    {
+      "id": "home",
+      "title": { "en": "Home" }
+    },
+    {
+      "id": "high",
+      "title": { "en": "High" }
+    },
+    {
+      "id": "fireplace",
+      "title": { "en": "Fireplace" }
+    },
+    {
+      "id": "cooker_hood",
+      "title": { "en": "Cooker Hood" }
+    }
+  ]
+}

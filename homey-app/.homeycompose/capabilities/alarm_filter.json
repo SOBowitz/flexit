@@ -1,0 +1,16 @@
+{
+  "type": "boolean",
+  "title": {
+    "en": "Filter Alarm"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "icon": "/assets/filter.svg",
+  "insightsTitleTrue": {
+    "en": "Filter is polluted"
+  },
+  "insightsTitleFalse": {
+    "en": "Filter is OK"
+  }
+}

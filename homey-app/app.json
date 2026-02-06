@@ -1,0 +1,620 @@
+{
+  "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
+  "id": "no.flexit.nordic",
+  "version": "1.0.0",
+  "compatibility": ">=5.0.0",
+  "sdk": 3,
+  "platforms": [
+    "local"
+  ],
+  "name": {
+    "en": "Flexit Nordic"
+  },
+  "description": {
+    "en": "Control your Flexit Nordic ventilation unit via BACnet"
+  },
+  "brandColor": "#00529B",
+  "category": "climate",
+  "permissions": [],
+  "author": {
+    "name": "Svein Ole"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png",
+    "xlarge": "/assets/images/xlarge.png"
+  },
+  "flow": {
+    "triggers": [
+      {
+        "id": "ventilation_mode_changed",
+        "title": {
+          "en": "The ventilation mode changed"
+        },
+        "tokens": [
+          {
+            "name": "mode",
+            "type": "string",
+            "title": {
+              "en": "Mode"
+            },
+            "example": {
+              "en": "home"
+            }
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=flexit-nordic"
+          }
+        ]
+      },
+      {
+        "id": "filter_polluted",
+        "title": {
+          "en": "The air filter is polluted"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=flexit-nordic"
+          }
+        ]
+      }
+    ],
+    "conditions": [
+      {
+        "id": "is_ventilation_mode",
+        "title": {
+          "en": "The ventilation mode !{{is|is not}} [[mode]]"
+        },
+        "titleFormatted": {
+          "en": "The ventilation mode !{{is|is not}} [[mode]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=flexit-nordic"
+          },
+          {
+            "name": "mode",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "stop",
+                "label": {
+                  "en": "Stop"
+                }
+              },
+              {
+                "id": "away",
+                "label": {
+                  "en": "Away"
+                }
+              },
+              {
+                "id": "home",
+                "label": {
+                  "en": "Home"
+                }
+              },
+              {
+                "id": "high",
+                "label": {
+                  "en": "High"
+                }
+              },
+              {
+                "id": "fireplace",
+                "label": {
+                  "en": "Fireplace"
+                }
+              },
+              {
+                "id": "cooker_hood",
+                "label": {
+                  "en": "Cooker Hood"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "is_heater_on",
+        "title": {
+          "en": "The electric heater !{{is|is not}} on"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=flexit-nordic"
+          }
+        ]
+      },
+      {
+        "id": "is_filter_polluted",
+        "title": {
+          "en": "The air filter !{{is|is not}} polluted"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=flexit-nordic"
+          }
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "id": "set_ventilation_mode",
+        "title": {
+          "en": "Set ventilation mode to [[mode]]"
+        },
+        "titleFormatted": {
+          "en": "Set ventilation mode to [[mode]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=flexit-nordic"
+          },
+          {
+            "name": "mode",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "stop",
+                "label": {
+                  "en": "Stop"
+                }
+              },
+              {
+                "id": "away",
+                "label": {
+                  "en": "Away"
+                }
+              },
+              {
+                "id": "home",
+                "label": {
+                  "en": "Home"
+                }
+              },
+              {
+                "id": "high",
+                "label": {
+                  "en": "High"
+                }
+              },
+              {
+                "id": "fireplace",
+                "label": {
+                  "en": "Fireplace"
+                }
+              },
+              {
+                "id": "cooker_hood",
+                "label": {
+                  "en": "Cooker Hood"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "set_temperature",
+        "title": {
+          "en": "Set temperature to [[temperature]] °C"
+        },
+        "titleFormatted": {
+          "en": "Set temperature to [[temperature]] °C"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=flexit-nordic"
+          },
+          {
+            "name": "temperature",
+            "type": "range",
+            "min": 14,
+            "max": 30,
+            "step": 0.5,
+            "label": "°C",
+            "labelDecimals": 1
+          }
+        ]
+      },
+      {
+        "id": "start_fireplace",
+        "title": {
+          "en": "Start fireplace ventilation for [[minutes]] minutes"
+        },
+        "titleFormatted": {
+          "en": "Start fireplace ventilation for [[minutes]] minutes"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=flexit-nordic"
+          },
+          {
+            "name": "minutes",
+            "type": "range",
+            "min": 1,
+            "max": 360,
+            "step": 1,
+            "label": "min",
+            "labelDecimals": 0
+          }
+        ]
+      },
+      {
+        "id": "start_rapid_ventilation",
+        "title": {
+          "en": "Start rapid ventilation for [[minutes]] minutes"
+        },
+        "titleFormatted": {
+          "en": "Start rapid ventilation for [[minutes]] minutes"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=flexit-nordic"
+          },
+          {
+            "name": "minutes",
+            "type": "range",
+            "min": 1,
+            "max": 360,
+            "step": 1,
+            "label": "min",
+            "labelDecimals": 0
+          }
+        ]
+      },
+      {
+        "id": "toggle_heater",
+        "title": {
+          "en": "Turn the electric heater [[onoff]]"
+        },
+        "titleFormatted": {
+          "en": "Turn the electric heater [[onoff]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=flexit-nordic"
+          },
+          {
+            "name": "onoff",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "on",
+                "label": {
+                  "en": "On"
+                }
+              },
+              {
+                "id": "off",
+                "label": {
+                  "en": "Off"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "drivers": [
+    {
+      "name": {
+        "en": "Flexit Nordic"
+      },
+      "class": "fan",
+      "capabilities": [
+        "flexit_mode",
+        "target_temperature",
+        "measure_temperature",
+        "measure_temperature.outside",
+        "measure_temperature.extract",
+        "measure_temperature.exhaust",
+        "measure_humidity",
+        "fan_speed_supply",
+        "fan_speed_exhaust",
+        "fan_rpm_supply",
+        "fan_rpm_exhaust",
+        "heat_exchanger_efficiency",
+        "heat_exchanger_speed",
+        "measure_power",
+        "electric_heater",
+        "alarm_filter"
+      ],
+      "capabilitiesOptions": {
+        "target_temperature": {
+          "title": {
+            "en": "Temperature Setpoint"
+          },
+          "min": 14,
+          "max": 30,
+          "step": 0.5
+        },
+        "measure_temperature": {
+          "title": {
+            "en": "Supply Temperature"
+          }
+        },
+        "measure_temperature.outside": {
+          "title": {
+            "en": "Outside Temperature"
+          }
+        },
+        "measure_temperature.extract": {
+          "title": {
+            "en": "Extract Temperature"
+          }
+        },
+        "measure_temperature.exhaust": {
+          "title": {
+            "en": "Exhaust Temperature"
+          }
+        },
+        "measure_power": {
+          "title": {
+            "en": "Heater Power"
+          },
+          "decimals": 0
+        }
+      },
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "lan"
+      ],
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "Connection"
+          },
+          "children": [
+            {
+              "id": "ip_address",
+              "type": "text",
+              "label": {
+                "en": "IP Address"
+              },
+              "value": ""
+            },
+            {
+              "id": "device_id",
+              "type": "number",
+              "label": {
+                "en": "BACnet Device ID"
+              },
+              "value": 2,
+              "min": 0,
+              "max": 4194303
+            },
+            {
+              "id": "poll_interval",
+              "type": "number",
+              "label": {
+                "en": "Poll Interval (seconds)"
+              },
+              "value": 30,
+              "min": 5,
+              "max": 3600
+            }
+          ]
+        }
+      ],
+      "id": "flexit-nordic"
+    }
+  ],
+  "capabilities": {
+    "alarm_filter": {
+      "type": "boolean",
+      "title": {
+        "en": "Filter Alarm"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/filter.svg",
+      "insightsTitleTrue": {
+        "en": "Filter is polluted"
+      },
+      "insightsTitleFalse": {
+        "en": "Filter is OK"
+      }
+    },
+    "electric_heater": {
+      "type": "boolean",
+      "title": {
+        "en": "Electric Heater"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": "toggle",
+      "insightsTitleTrue": {
+        "en": "Heater turned on"
+      },
+      "insightsTitleFalse": {
+        "en": "Heater turned off"
+      }
+    },
+    "fan_rpm_exhaust": {
+      "type": "number",
+      "title": {
+        "en": "Exhaust Fan RPM"
+      },
+      "uiComponent": "sensor",
+      "getable": true,
+      "setable": false,
+      "units": {
+        "en": "RPM"
+      },
+      "min": 0,
+      "max": 5000,
+      "decimals": 0,
+      "insights": true
+    },
+    "fan_rpm_supply": {
+      "type": "number",
+      "title": {
+        "en": "Supply Fan RPM"
+      },
+      "uiComponent": "sensor",
+      "getable": true,
+      "setable": false,
+      "units": {
+        "en": "RPM"
+      },
+      "min": 0,
+      "max": 5000,
+      "decimals": 0,
+      "insights": true
+    },
+    "fan_speed_exhaust": {
+      "type": "number",
+      "title": {
+        "en": "Exhaust Fan"
+      },
+      "uiComponent": "sensor",
+      "getable": true,
+      "setable": false,
+      "units": {
+        "en": "%"
+      },
+      "min": 0,
+      "max": 100,
+      "decimals": 0,
+      "insights": true
+    },
+    "fan_speed_supply": {
+      "type": "number",
+      "title": {
+        "en": "Supply Fan"
+      },
+      "uiComponent": "sensor",
+      "getable": true,
+      "setable": false,
+      "units": {
+        "en": "%"
+      },
+      "min": 0,
+      "max": 100,
+      "decimals": 0,
+      "insights": true
+    },
+    "flexit_mode": {
+      "type": "enum",
+      "title": {
+        "en": "Ventilation Mode"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": "picker",
+      "values": [
+        {
+          "id": "stop",
+          "title": {
+            "en": "Stop"
+          }
+        },
+        {
+          "id": "away",
+          "title": {
+            "en": "Away"
+          }
+        },
+        {
+          "id": "home",
+          "title": {
+            "en": "Home"
+          }
+        },
+        {
+          "id": "high",
+          "title": {
+            "en": "High"
+          }
+        },
+        {
+          "id": "fireplace",
+          "title": {
+            "en": "Fireplace"
+          }
+        },
+        {
+          "id": "cooker_hood",
+          "title": {
+            "en": "Cooker Hood"
+          }
+        }
+      ]
+    },
+    "heat_exchanger_efficiency": {
+      "type": "number",
+      "title": {
+        "en": "Heat Exchanger Efficiency"
+      },
+      "uiComponent": "sensor",
+      "getable": true,
+      "setable": false,
+      "units": {
+        "en": "%"
+      },
+      "min": 0,
+      "max": 100,
+      "decimals": 0,
+      "insights": true
+    },
+    "heat_exchanger_speed": {
+      "type": "number",
+      "title": {
+        "en": "Heat Exchanger Speed"
+      },
+      "uiComponent": "sensor",
+      "getable": true,
+      "setable": false,
+      "units": {
+        "en": "%"
+      },
+      "min": 0,
+      "max": 100,
+      "decimals": 0,
+      "insights": true
+    }
+  }
+}

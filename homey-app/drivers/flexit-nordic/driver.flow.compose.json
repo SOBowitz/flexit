@@ -1,0 +1,165 @@
+{
+  "triggers": [
+    {
+      "id": "ventilation_mode_changed",
+      "title": {
+        "en": "The ventilation mode changed"
+      },
+      "tokens": [
+        {
+          "name": "mode",
+          "type": "string",
+          "title": { "en": "Mode" },
+          "example": { "en": "home" }
+        }
+      ]
+    },
+    {
+      "id": "filter_polluted",
+      "title": {
+        "en": "The air filter is polluted"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "id": "is_ventilation_mode",
+      "title": {
+        "en": "The ventilation mode !{{is|is not}} [[mode]]"
+      },
+      "titleFormatted": {
+        "en": "The ventilation mode !{{is|is not}} [[mode]]"
+      },
+      "args": [
+        {
+          "name": "mode",
+          "type": "dropdown",
+          "values": [
+            { "id": "stop", "label": { "en": "Stop" } },
+            { "id": "away", "label": { "en": "Away" } },
+            { "id": "home", "label": { "en": "Home" } },
+            { "id": "high", "label": { "en": "High" } },
+            { "id": "fireplace", "label": { "en": "Fireplace" } },
+            { "id": "cooker_hood", "label": { "en": "Cooker Hood" } }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "is_heater_on",
+      "title": {
+        "en": "The electric heater !{{is|is not}} on"
+      }
+    },
+    {
+      "id": "is_filter_polluted",
+      "title": {
+        "en": "The air filter !{{is|is not}} polluted"
+      }
+    }
+  ],
+  "actions": [
+    {
+      "id": "set_ventilation_mode",
+      "title": {
+        "en": "Set ventilation mode to [[mode]]"
+      },
+      "titleFormatted": {
+        "en": "Set ventilation mode to [[mode]]"
+      },
+      "args": [
+        {
+          "name": "mode",
+          "type": "dropdown",
+          "values": [
+            { "id": "stop", "label": { "en": "Stop" } },
+            { "id": "away", "label": { "en": "Away" } },
+            { "id": "home", "label": { "en": "Home" } },
+            { "id": "high", "label": { "en": "High" } },
+            { "id": "fireplace", "label": { "en": "Fireplace" } },
+            { "id": "cooker_hood", "label": { "en": "Cooker Hood" } }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "set_temperature",
+      "title": {
+        "en": "Set temperature to [[temperature]] °C"
+      },
+      "titleFormatted": {
+        "en": "Set temperature to [[temperature]] °C"
+      },
+      "args": [
+        {
+          "name": "temperature",
+          "type": "range",
+          "min": 14,
+          "max": 30,
+          "step": 0.5,
+          "label": "°C",
+          "labelDecimals": 1
+        }
+      ]
+    },
+    {
+      "id": "start_fireplace",
+      "title": {
+        "en": "Start fireplace ventilation for [[minutes]] minutes"
+      },
+      "titleFormatted": {
+        "en": "Start fireplace ventilation for [[minutes]] minutes"
+      },
+      "args": [
+        {
+          "name": "minutes",
+          "type": "range",
+          "min": 1,
+          "max": 360,
+          "step": 1,
+          "label": "min",
+          "labelDecimals": 0
+        }
+      ]
+    },
+    {
+      "id": "start_rapid_ventilation",
+      "title": {
+        "en": "Start rapid ventilation for [[minutes]] minutes"
+      },
+      "titleFormatted": {
+        "en": "Start rapid ventilation for [[minutes]] minutes"
+      },
+      "args": [
+        {
+          "name": "minutes",
+          "type": "range",
+          "min": 1,
+          "max": 360,
+          "step": 1,
+          "label": "min",
+          "labelDecimals": 0
+        }
+      ]
+    },
+    {
+      "id": "toggle_heater",
+      "title": {
+        "en": "Turn the electric heater [[onoff]]"
+      },
+      "titleFormatted": {
+        "en": "Turn the electric heater [[onoff]]"
+      },
+      "args": [
+        {
+          "name": "onoff",
+          "type": "dropdown",
+          "values": [
+            { "id": "on", "label": { "en": "On" } },
+            { "id": "off", "label": { "en": "Off" } }
+          ]
+        }
+      ]
+    }
+  ]
+}

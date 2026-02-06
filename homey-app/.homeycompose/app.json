@@ -1,0 +1,24 @@
+{
+  "id": "no.flexit.nordic",
+  "version": "1.0.0",
+  "compatibility": ">=5.0.0",
+  "sdk": 3,
+  "platforms": ["local"],
+  "name": {
+    "en": "Flexit Nordic"
+  },
+  "description": {
+    "en": "Control your Flexit Nordic ventilation unit via BACnet"
+  },
+  "brandColor": "#00529B",
+  "category": "climate",
+  "permissions": [],
+  "author": {
+    "name": "Svein Ole"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png",
+    "xlarge": "/assets/images/xlarge.png"
+  }
+}

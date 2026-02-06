@@ -1,0 +1,12 @@
+{
+  "drivers": {
+    "flexit-nordic": {
+      "pair": {
+        "list_devices": {
+          "title": "Select your Flexit unit",
+          "subtitle": "Discovered via BACnet on your network"
+        }
+      }
+    }
+  }
+}

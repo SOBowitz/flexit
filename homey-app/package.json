@@ -1,0 +1,13 @@
+{
+  "name": "no.flexit.nordic",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "start": "homey app run",
+    "install-app": "homey app install",
+    "validate": "homey app validate"
+  },
+  "dependencies": {
+    "bacstack": "^0.0.1-beta.14"
+  }
+}

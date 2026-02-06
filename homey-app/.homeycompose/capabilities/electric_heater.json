@@ -1,0 +1,15 @@
+{
+  "type": "boolean",
+  "title": {
+    "en": "Electric Heater"
+  },
+  "getable": true,
+  "setable": true,
+  "uiComponent": "toggle",
+  "insightsTitleTrue": {
+    "en": "Heater turned on"
+  },
+  "insightsTitleFalse": {
+    "en": "Heater turned off"
+  }
+}

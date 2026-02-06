@@ -381,6 +381,11 @@
           "decimals": 0
         }
       },
+      "images": {
+        "small": "/drivers/flexit-nordic/assets/images/small.png",
+        "large": "/drivers/flexit-nordic/assets/images/large.png",
+        "xlarge": "/drivers/flexit-nordic/assets/images/xlarge.png"
+      },
       "platforms": [
         "local"
       ],

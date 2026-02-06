@@ -3,8 +3,10 @@
 Control a [Flexit Nordic](https://www.flexit.no/) ventilation unit over BACnet/IP — from the command line or as a smart home device in [Homey](https://homey.app/).
 
 <p align="center">
-  <img src="docs/homey-screenshot-1.png" width="250" alt="Homey App - Temperatures & Fans">
-  <img src="docs/homey-screenshot-2.png" width="250" alt="Homey App - Heat Exchanger & Power">
+  <img src="docs/homey-screenshot-1.png" width="200" alt="Homey App - Temperatures & Fans">
+  <img src="docs/homey-screenshot-2.png" width="200" alt="Homey App - Heat Exchanger & Power">
+  <img src="docs/homey-screenshot-3.png" width="200" alt="Homey App - Mode Picker">
+  <img src="docs/homey-screenshot-4.png" width="200" alt="Homey App - Thermostat">
 </p>
 
 ## Features

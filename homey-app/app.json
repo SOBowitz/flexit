@@ -19,6 +19,11 @@
   "author": {
     "name": "Svein Ole"
   },
+  "support": "https://github.com/SOBowitz/flexit",
+  "bugs": {
+    "url": "https://github.com/SOBowitz/flexit/issues"
+  },
+  "source": "https://github.com/SOBowitz/flexit",
   "images": {
     "small": "/assets/images/small.png",
     "large": "/assets/images/large.png",

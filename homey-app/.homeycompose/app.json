@@ -1,9 +1,11 @@
 {
   "id": "no.flexit.nordic",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "compatibility": ">=5.0.0",
   "sdk": 3,
-  "platforms": ["local"],
+  "platforms": [
+    "local"
+  ],
   "name": {
     "en": "Flexit Nordic"
   },
